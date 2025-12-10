@@ -14,30 +14,26 @@ Q - Quit the program");
 Console.WriteLine("-------------------------------");
 var gameSelected = Console.ReadLine();
 
-if (gameSelected.ToUpper().Trim() == "A")
-{
-    AdditionGame("You chose Addition");
-}
-else if (gameSelected.ToUpper().Trim() == "S")
-{
-    SubtractionGame("You chose Subtraction");
-}
-else if (gameSelected.ToUpper().Trim() == "M")
-{
-    MultiplicationGame("You chose Multiplication");
-}
-else if (gameSelected.ToUpper().Trim() == "D")
-{
-    DivisionGame("You chose Division");
-}
-else if (gameSelected.ToUpper().Trim() == "Q")
-{
-    Console.WriteLine("You chose to Quit. Goodbye!");
-    Environment.Exit(1);
-}
-else
-{
-    Console.WriteLine("Invalid choice. Please restart the program and choose a valid option.");
+switch (gameSelected.Trim().ToUpper())
+{ 
+    case "A":
+        AdditionGame("You have selected the Addition Game.");
+        break;
+    case "S":
+        SubtractionGame("You have selected the Subtraction Game.");
+        break;
+    case "M":
+        MultiplicationGame("You have selected the Multiplication Game.");
+        break;
+    case "D":
+        DivisionGame("You have selected the Division Game.");
+        break;
+    case "Q":
+        Console.WriteLine("Thank you for playing. Goodbye!");
+        break;
+    default:
+        Console.WriteLine("Invalid selection. Please restart the program and choose a valid option.");
+        break;
 }
 
 void DivisionGame(string message)
