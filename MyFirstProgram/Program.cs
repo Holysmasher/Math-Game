@@ -1,7 +1,6 @@
-﻿Console.WriteLine("Please type your name:");
+﻿var date = DateTime.Now;
+string name = GetName();
 
-var name = Console.ReadLine();
-var date = DateTime.Now;
 
 Menu(name, date);
 
@@ -23,9 +22,25 @@ void SubtractionGame(string message)
 void AdditionGame(string message)
 {
     Console.WriteLine(message);
+
+    var random = new Random();
+    int firstNumber = random.Next(1, 9);
+    int secondNumber = random.Next(1, 9);
+
+    Console.WriteLine($"What is {firstNumber} + {secondNumber}?");
+    var answer = Console.ReadLine();
+    int sum = firstNumber + secondNumber;
+    if (int.Parse(answer) == sum)
+    {
+        Console.WriteLine("Correct! Well done.");
+    }
+    else
+    {
+        Console.WriteLine($"Incorrect. The correct answer is {sum}.");
+    }
 }
 
-void Menu(string? name, DateTime date)
+void Menu(string name, DateTime date)
 {
     Console.WriteLine("-------------------------------");
     Console.WriteLine($"Hello, {name}. It's {date.DayOfWeek}. This is your math game.");
@@ -59,4 +74,12 @@ Q - Quit the program");
             Console.WriteLine("Invalid selection. Please restart the program and choose a valid option.");
             break;
     }
+}
+
+string GetName()
+{
+    Console.WriteLine("Please type your name:");
+
+    var name = Console.ReadLine();
+    return name;
 }
