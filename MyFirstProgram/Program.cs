@@ -7,16 +7,106 @@ Menu(name, date);
 void DivisionGame(string message)
 {
     Console.WriteLine(message);
+
+    var random = new Random();
+    var score = 0;
+
+    int firstNumber;
+    int secondNumber;
+
+    for (int i = 0; i < 5; i++)
+    {
+        firstNumber = random.Next(1, 51);
+        secondNumber = random.Next(1, 51);
+
+        Console.WriteLine($"What is {firstNumber} / {secondNumber}?");
+        var answer = Console.ReadLine();
+        int sum = firstNumber / secondNumber;
+        if (int.Parse(answer) == sum)
+        {
+            Console.WriteLine("Correct! Well done.");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine($"Incorrect. The correct answer is {sum}.");
+        }
+
+        if (i == 4)
+        {
+            Console.WriteLine($"Game over! Your final score is {score}.");
+        }
+    }
 }
 
 void MultiplicationGame(string message)
 {
     Console.WriteLine(message);
+
+    var random = new Random();
+    var score = 0;
+
+    int firstNumber;
+    int secondNumber;
+
+    for (int i = 0; i < 5; i++)
+    {
+        firstNumber = random.Next(1, 51);
+        secondNumber = random.Next(1, 51);
+
+        Console.WriteLine($"What is {firstNumber} * {secondNumber}?");
+        var answer = Console.ReadLine();
+        int sum = firstNumber * secondNumber;
+        if (int.Parse(answer) == sum)
+        {
+            Console.WriteLine("Correct! Well done.");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine($"Incorrect. The correct answer is {sum}.");
+        }
+
+        if (i == 4)
+        {
+            Console.WriteLine($"Game over! Your final score is {score}.");
+        }
+    }
 }
 
 void SubtractionGame(string message)
 {
     Console.WriteLine(message);
+
+    var random = new Random();
+    var score = 0;
+
+    int firstNumber;
+    int secondNumber;
+
+    for (int i = 0; i < 5; i++)
+    {
+        firstNumber = random.Next(1, 51);
+        secondNumber = random.Next(1, 51);
+
+        Console.WriteLine($"What is {firstNumber} - {secondNumber}?");
+        var answer = Console.ReadLine();
+        int sum = firstNumber - secondNumber;
+        if (int.Parse(answer) == sum)
+        {
+            Console.WriteLine("Correct! Well done.");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine($"Incorrect. The correct answer is {sum}.");
+        }
+
+        if (i == 4)
+        {
+            Console.WriteLine($"Game over! Your final score is {score}.");
+        }
+    }
 }
 
 void AdditionGame(string message)
@@ -34,7 +124,6 @@ void AdditionGame(string message)
         firstNumber = random.Next(1, 51);
         secondNumber = random.Next(1, 51);
 
-
         Console.WriteLine($"What is {firstNumber} + {secondNumber}?");
         var answer = Console.ReadLine();
         int sum = firstNumber + secondNumber;
@@ -50,14 +139,10 @@ void AdditionGame(string message)
 
         if (i == 4)
         {
-            Console.WriteLine($"You have completed the Addition Game. Your score is {score}.");
-            Console.WriteLine("Returning to Main Menu...");
-            Menu(name, date);
+            Console.WriteLine($"Game over! Your final score is {score}.");
         }
     }
 
-    
-    
 }
 
 void Menu(string name, DateTime date)
