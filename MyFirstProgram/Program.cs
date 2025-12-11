@@ -24,20 +24,40 @@ void AdditionGame(string message)
     Console.WriteLine(message);
 
     var random = new Random();
-    int firstNumber = random.Next(1, 9);
-    int secondNumber = random.Next(1, 9);
+    var score = 0;
 
-    Console.WriteLine($"What is {firstNumber} + {secondNumber}?");
-    var answer = Console.ReadLine();
-    int sum = firstNumber + secondNumber;
-    if (int.Parse(answer) == sum)
+    int firstNumber;
+    int secondNumber;
+
+    for(int i=0; i < 5; i++)
     {
-        Console.WriteLine("Correct! Well done.");
+        firstNumber = random.Next(1, 51);
+        secondNumber = random.Next(1, 51);
+
+
+        Console.WriteLine($"What is {firstNumber} + {secondNumber}?");
+        var answer = Console.ReadLine();
+        int sum = firstNumber + secondNumber;
+        if (int.Parse(answer) == sum)
+        {
+            Console.WriteLine("Correct! Well done.");
+            score++;
+        }
+        else
+        {
+            Console.WriteLine($"Incorrect. The correct answer is {sum}.");
+        }
+
+        if (i == 4)
+        {
+            Console.WriteLine($"You have completed the Addition Game. Your score is {score}.");
+            Console.WriteLine("Returning to Main Menu...");
+            Menu(name, date);
+        }
     }
-    else
-    {
-        Console.WriteLine($"Incorrect. The correct answer is {sum}.");
-    }
+
+    
+    
 }
 
 void Menu(string name, DateTime date)
