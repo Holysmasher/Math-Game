@@ -8,6 +8,8 @@ Menu(name, date);
 
 void DivisionGame(string message)
 {
+    Console.Clear();
+    Console.Write(message);
     var score = 0;
     for (int i = 0; i < 5; i++)
     {
@@ -20,12 +22,14 @@ void DivisionGame(string message)
         var sum = firstNumber / secondNumber;
         if (int.Parse(result) == sum)
         {
-            Console.WriteLine("Correct! Well done.");
+            Console.WriteLine("Correct! Well done. Type any key for the next question.");
+            Console.ReadLine();
             score++;
         }
         else
         {
-            Console.WriteLine($"Incorrect. The correct answer is {sum}.");
+            Console.WriteLine($"Incorrect. The correct answer is {sum}. Type any key for the next question.");
+            Console.ReadLine();
         }
 
         if (i == 4)
@@ -37,7 +41,8 @@ void DivisionGame(string message)
 
 void MultiplicationGame(string message)
 {
-    Console.WriteLine(message);
+    Console.Clear();
+    Console.Write(message);
 
     var random = new Random();
     var score = 0;
@@ -55,12 +60,14 @@ void MultiplicationGame(string message)
         int sum = firstNumber * secondNumber;
         if (int.Parse(answer) == sum)
         {
-            Console.WriteLine("Correct! Well done.");
+            Console.WriteLine("Correct! Well done. Type any key for the next question.");
+            Console.ReadLine();
             score++;
         }
         else
         {
-            Console.WriteLine($"Incorrect. The correct answer is {sum}.");
+            Console.WriteLine($"Incorrect. The correct answer is {sum}. Type any key for the next question.");
+            Console.ReadLine();
         }
 
         if (i == 4)
@@ -72,7 +79,8 @@ void MultiplicationGame(string message)
 
 void SubtractionGame(string message)
 {
-    Console.WriteLine(message);
+    Console.Clear();
+    Console.Write(message);
 
     var random = new Random();
     var score = 0;
@@ -90,12 +98,14 @@ void SubtractionGame(string message)
         int sum = firstNumber - secondNumber;
         if (int.Parse(answer) == sum)
         {
-            Console.WriteLine("Correct! Well done.");
+            Console.WriteLine("Correct! Well done. Type any key for the next question.");
+            Console.ReadLine();
             score++;
         }
         else
         {
-            Console.WriteLine($"Incorrect. The correct answer is {sum}.");
+            Console.WriteLine($"Incorrect. The correct answer is {sum}. Type any key for the next question.");
+            Console.ReadLine();
         }
 
         if (i == 4)
@@ -107,7 +117,8 @@ void SubtractionGame(string message)
 
 void AdditionGame(string message)
 {
-    Console.WriteLine(message);
+    Console.Clear();
+    Console.Write(message);
 
     var random = new Random();
     var score = 0;
@@ -125,12 +136,14 @@ void AdditionGame(string message)
         int sum = firstNumber + secondNumber;
         if (int.Parse(answer) == sum)
         {
-            Console.WriteLine("Correct! Well done.");
+            Console.WriteLine("Correct! Well done. Type any key for the next question.");
+            Console.ReadLine();
             score++;
         }
         else
         {
-            Console.WriteLine($"Incorrect. The correct answer is {sum}.");
+            Console.WriteLine($"Incorrect. The correct answer is {sum}. Type any key for the next question.");
+            Console.ReadLine();
         }
 
         if (i == 4)
