@@ -17,6 +17,7 @@ namespace MyFirstProgram
 
                 Console.WriteLine($"{firstNumber} / {secondNumber}");
                 var result = Console.ReadLine();
+                result = Helpers.ValidateResult(result);
                 var sum = firstNumber / secondNumber;
                 if (int.Parse(result) == sum)
                 {
@@ -56,9 +57,10 @@ namespace MyFirstProgram
                 secondNumber = random.Next(1, 51);
 
                 Console.WriteLine($"What is {firstNumber} * {secondNumber}?");
-                var answer = Console.ReadLine();
+                var result = Console.ReadLine();
+                result = Helpers.ValidateResult(result);
                 int sum = firstNumber * secondNumber;
-                if (int.Parse(answer) == sum)
+                if (int.Parse(result) == sum)
                 {
                     Console.WriteLine("Correct! Well done. Type any key for the next question.");
                     Console.ReadLine();
@@ -96,9 +98,10 @@ namespace MyFirstProgram
                 secondNumber = random.Next(1, 51);
 
                 Console.WriteLine($"What is {firstNumber} - {secondNumber}?");
-                var answer = Console.ReadLine();
+                var result = Console.ReadLine();
+                result = Helpers.ValidateResult(result);
                 int sum = firstNumber - secondNumber;
-                if (int.Parse(answer) == sum)
+                if (int.Parse(result) == sum)
                 {
                     Console.WriteLine("Correct! Well done. Type any key for the next question.");
                     Console.ReadLine();
@@ -136,9 +139,10 @@ namespace MyFirstProgram
                 secondNumber = random.Next(1, 51);
 
                 Console.WriteLine($"What is {firstNumber} + {secondNumber}?");
-                var answer = Console.ReadLine();
+                var result = Console.ReadLine();
+                result = Helpers.ValidateResult(result);
                 int sum = firstNumber + secondNumber;
-                if (int.Parse(answer) == sum)
+                if (int.Parse(result) == sum)
                 {
                     Console.WriteLine("Correct! Well done. Type any key for the next question.");
                     Console.ReadLine();

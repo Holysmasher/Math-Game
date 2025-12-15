@@ -6,6 +6,7 @@ namespace MyFirstProgram
         GameEngine engine = new();
         internal void ShowMenu(string name, DateTime date)
         {
+            Console.Clear();
             Console.WriteLine("-------------------------------");
             Console.WriteLine($"Hello, {name}. It's {date.DayOfWeek}. This is your math game.\n");
 
