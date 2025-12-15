@@ -1,12 +1,19 @@
 ﻿
+using MyFirstProgram.Models;
+
 namespace MyFirstProgram
 {
     internal class Helpers
     {
-        static List<string> games = new();
+        static List<Game> games = new();
         internal static void AddToHistory(int gameScore, string gameType)
         {
-            games.Add($"{DateTime.Now} - {gameType}: Score={gameScore}");
+            games.Add(new Game
+            {
+                Date = DateTime.Now,
+                Score = gameScore,
+                Type = gameType
+            });
         }
 
         internal static void GetGames()
@@ -16,7 +23,7 @@ namespace MyFirstProgram
             Console.WriteLine("-------------------------------");
             foreach (var game in games)
             {
-                Console.WriteLine(game);
+                Console.WriteLine($"{game.Date} - {game.Type}:  {game.Score}pts");
             }
             Console.WriteLine("-------------------------------\n");
             Console.WriteLine("Type any key to return to the main menu.");
