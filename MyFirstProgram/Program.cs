@@ -1,6 +1,9 @@
 ﻿using System.Threading.Tasks.Sources;
 
 var date = DateTime.Now;
+
+var games = new List<string>();
+
 string name = GetName();
 
 
@@ -37,6 +40,8 @@ void DivisionGame(string message)
             Console.WriteLine($"Game over! Your final score is {score}.");
         }
     }
+
+    AddToHistory(score, "Division");
 }
 
 void MultiplicationGame(string message)
@@ -75,6 +80,8 @@ void MultiplicationGame(string message)
             Console.WriteLine($"Game over! Your final score is {score}.");
         }
     }
+
+    AddToHistory(score, "Multiplication");
 }
 
 void SubtractionGame(string message)
@@ -113,6 +120,8 @@ void SubtractionGame(string message)
             Console.WriteLine($"Game over! Your final score is {score}.");
         }
     }
+
+    AddToHistory(score, "Subtraction");
 }
 
 void AdditionGame(string message)
@@ -152,6 +161,13 @@ void AdditionGame(string message)
         }
     }
 
+    AddToHistory(score, "Addition");
+
+}
+
+void AddToHistory(int gameScore, string gameType)
+{
+    games.Add($"{DateTime.Now} - {gameType}: Score={gameScore}");
 }
 
 void Menu(string name, DateTime date)
@@ -166,6 +182,7 @@ void Menu(string name, DateTime date)
     {
         Console.Clear();
         Console.WriteLine($@"What game would you like to play today? Choose from the options below:
+        V - View Previous Games
         A - Addition
         S - Subtraction
         M - Multiplication
@@ -176,17 +193,20 @@ void Menu(string name, DateTime date)
 
         switch (gameSelected.Trim().ToUpper())
         {
+            case "V":
+                GetGames();
+                break;
             case "A":
-                AdditionGame("You have selected the Addition Game.");
+                AdditionGame("You have selected the Addition Game.\n");
                 break;
             case "S":
-                SubtractionGame("You have selected the Subtraction Game.");
+                SubtractionGame("You have selected the Subtraction Game.\n");
                 break;
             case "M":
-                MultiplicationGame("You have selected the Multiplication Game.");
+                MultiplicationGame("You have selected the Multiplication Game.\n");
                 break;
             case "D":
-                DivisionGame("You have selected the Division Game.");
+                DivisionGame("You have selected the Division Game.\n");
                 break;
             case "Q":
                 Console.WriteLine("Thank you for playing. Goodbye!");
@@ -197,6 +217,20 @@ void Menu(string name, DateTime date)
                 break;
         }
     } while (isGameOn);
+}
+
+void GetGames()
+{
+    Console.Clear();
+    Console.WriteLine("Games History:");
+    Console.WriteLine("-------------------------------");
+    foreach (var game in games)
+    {
+        Console.WriteLine(game);
+    }
+    Console.WriteLine("-------------------------------\n");
+    Console.WriteLine("Type any key to return to the main menu.");
+    Console.ReadLine();
 }
 
 string GetName()
