@@ -6,7 +6,7 @@ namespace MyFirstProgram
     internal class Helpers
     {
         static List<Game> games = new();
-        internal static void AddToHistory(int gameScore, string gameType)
+        internal static void AddToHistory(int gameScore, GameType gameType)
         {
             games.Add(new Game
             {
